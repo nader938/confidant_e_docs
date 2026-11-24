@@ -9,6 +9,7 @@ h2{font-size:1.3rem;margin:2.5rem 0 .5rem}h3{font-size:1.05rem;margin:1.5rem 0 .
 .sub{color:#5b5d72;margin:0 0 1.5rem}a{color:#4b53a8}li{margin:.35rem 0}
 .table{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:.95rem;margin:1rem 0}
 th,td{text-align:left;vertical-align:top;padding:.5rem .75rem;border-bottom:1px solid #c7c5d0}
+pre{background:rgba(120,120,140,.14);padding:.75rem 1rem;border-radius:8px;overflow-x:auto;font-size:.9rem;line-height:1.5;white-space:pre-wrap}blockquote{margin:1rem 0;padding:.1rem 1rem;border-left:3px solid #c7c5d0;color:#5b5d72}.tutorial{border-top:1px solid #c7c5d0;margin-top:2.5rem}.tutorial h2{margin-top:1.75rem}
 audio{width:100%;margin:.5rem 0 0}.note{font-size:.85rem;color:#5b5d72;margin:.25rem 0 1rem}
 .tutorial{padding-top:.5rem}
 footer{margin-top:3rem;padding-top:1rem;border-top:1px solid #c7c5d0;font-size:.9rem;color:#5b5d72}
@@ -18,235 +19,373 @@ footer{margin-top:3rem;padding-top:1rem;border-top:1px solid #c7c5d0;font-size:.
 <a href="./">Support</a><a href="guide.html">User guide</a>
 <a href="tutorials.html">Tutorials</a><a href="privacy.html">Privacy</a></nav>
 <h1>Tutorials</h1>
-<p class="sub">Short walk-throughs of confidant·e, to listen to or read. Each one matches a section of the <a href="guide.html">user guide</a>.</p>
-<ol start="0">
-<li><a href="#00-intro">Introduction, in Dr. Amir&#x27;s own words</a></li>
-<li><a href="#01-why-confidant-e">Why confidant·e</a></li>
-<li><a href="#02-getting-started">Getting started</a></li>
-<li><a href="#03-clean-up">Clean up your writing</a></li>
-<li><a href="#04-dictation">Dictate instead of typing</a></li>
-<li><a href="#05-ask">Ask in private</a></li>
-<li><a href="#06-choosing-an-ai">Choosing your AI, local or online</a></li>
-<li><a href="#07-memory">Memory</a></li>
-<li><a href="#08-files">Saving and opening files</a></li>
-<li><a href="#09-comparing-ais">Comparing AIs</a></li>
+<p class="sub">Worked examples: real tasks from start to finish, with text to type and what to expect. For a description of every feature, see the <a href="guide.html">user guide</a>.</p>
+<ol>
+<li><a href="#01-private-letter">Write a private letter to your doctor</a></li>
+<li><a href="#02-dictate-a-message">Speak your thoughts, send a finished message</a></li>
+<li><a href="#03-private-question">Ask a question you would rather keep to yourself</a></li>
+<li><a href="#04-find-your-best-ai">Find out which AI is best for your own questions</a></li>
+<li><a href="#05-a-project-over-several-days">Keep a project going over several days</a></li>
+<li><a href="#06-online-ai-for-one-job">Use an online AI for one job, then go back to private</a></li>
 </ol>
-<section class="tutorial" id="00-intro">
-<h2>Introduction, in Dr. Amir&#x27;s own words</h2>
-<p class="sub">About 3½ minutes</p>
-<audio controls preload="none" src="audio/00-intro.m4a"></audio>
-<p class="note">Recorded by Nader Amir.</p>
-<h3>Hello</h3>
-<p>Hello, Dr. Amir here. This is a quick intro to our new app, confidant·e, and I just wanted to talk a little bit about what it is and why I use it.</p>
-<h3>Why</h3>
-<p>Most AI writing tools send what you type to a company&#x27;s server. That is fine for birthday messages. It&#x27;s not fine for a letter to a doctor, or a note about a client, or a draft about a colleague, or questions you&#x27;d rather nobody else see.</p>
-<p>confidant·e can do the same work with an AI that runs on your Mac. Your words stay with you. With a local AI, nothing you write or ask leaves the computer. It works offline once you&#x27;ve downloaded the model. You don&#x27;t need an account, and you choose which model to use.</p>
-<h3>What you need</h3>
-<p>What you need is this. For the built-in AI, a Mac with macOS 14 or later, 16 gigabytes of memory, and about two and a half gigabytes of free space to download one of the most basic models.</p>
-<p>For better results you will need more memory in your Mac and the free Ollama app. For example, 32 to 64 gigabytes for mid-sized models, and 128 gigabytes for the most powerful ones.</p>
-<p>And if you want to use the commercial models like Claude, you would need your own API key. There are many tutorials on how to get your API key with a paid subscription.</p>
-<h3>Why the commercial models are there</h3>
-<p>That would be different. That would be using the commercial ones, and everything is sent to their server.</p>
-<p>Primarily, the reason that we have the commercial ones here is so you can actually do a side-by-side comparison. You can ask a simple question that is not necessarily confidential, and see how the performance of the two models compares. And that way you can decide if it&#x27;s okay for you to use it or not.</p>
-<h3>Getting started</h3>
-<p>So how would you get started? You would download confidant·e. The first thing you see is a welcome page that goes through the basics.</p>
-<p>If no AI is ready on your Mac, the app offers to download a built-in one. You can press Download, and you get a two and a half gigabyte model. The bar at the top will show you the download in progress, and when it finishes, the built-in AI is selected for you.</p>
-<h3>The built-in model and the welcome page</h3>
-<p>The built-in model is one called Gemma. It is very competent and will do the most basic tasks.</p>
-<p>To see the welcome page after you&#x27;ve started the app, just go to the Help menu and choose Welcome to confidant·e.</p>
-<h3>Cleaning up and dictating</h3>
-<p>The rest of the buttons in the app are pretty straightforward. You can clean up your writing, and you can see how the AI cleaned up your text.</p>
-<p>There&#x27;s a feature for you to dictate as opposed to type. Dictation is also something that can be sent to servers. So again, there we have two options. One is Apple dictation, which is the default and works straight away. This again sends your data to Apple. But we can also use something called Whisper, which is a local AI and more accurate, and the data is not shared with anyone.</p>
-<h3>Asking questions</h3>
-<p>confidant·e also allows you to ask questions. It doesn&#x27;t just have to be writing. You might have a question about your finances, or about your health, that you don&#x27;t necessarily want to share with the commercial AI models. For those you will use the same features as in the writing part of the app. Everything works the same. You can compare answers, and everything else.</p>
-<h3>Close</h3>
-<p>I hope this introduction got you started, and that you enjoy using the app.</p>
+<section class="tutorial" id="01-private-letter">
+<h2 id="write-a-private-letter-to-your-doctor">Write a private letter to
+your doctor</h2>
+<p><strong>You will:</strong> turn a rough, hurried message into one you
+can send, without it leaving your Mac.<br />
+<strong>Time:</strong> 3 minutes<br />
+<strong>You need:</strong> the built-in AI, downloaded.</p>
+<h3 id="the-situation">The situation</h3>
+<p>You need to write to your doctor about test results. You typed it
+quickly on your lunch break and it shows. It also contains health
+details you would not paste into a website.</p>
+<h3 id="steps">Steps</h3>
+<ol type="1">
+<li><p>Look at the menu labelled <strong>Clean up with</strong> at the
+top. Make sure it shows <strong>Built-in Gemma 3 4B</strong>. That AI
+runs on your Mac, so nothing you type here is sent anywhere.</p></li>
+<li><p>Click in <strong>Your text</strong> on the left and type or paste
+this:</p>
+<pre class="text"><code>hi dr patel, sorry for the late reply i been meaning to write for a while.
+i wanted to ask about the results from my last visit becuase the nurse said
+they was a bit high but she didnt say what that means, should i be worried?
+also i cant make the 14th anymore is there any chance to move it to the
+week after.
+
+thanks so much for you&#39;re help</code></pre></li>
+<li><p>Press <strong>Clean up</strong>.</p></li>
+<li><p>Watch the line under the boxes. It shows a timer while the AI
+works. The first run after opening the app takes longer, because the AI
+is loading into memory.</p></li>
+<li><p>Read the result in <strong>Cleaned up</strong> on the right. It
+should look close to this:</p>
+<pre class="text"><code>Hi Dr. Patel,
+
+Sorry for the late reply; I have been meaning to write for a while. I wanted
+to ask about the results from my last visit, because the nurse said they were
+a bit high but did not say what that means. Should I be worried?
+
+Also, I can no longer make the 14th. Is there any chance of moving it to the
+week after?
+
+Thanks so much for your help.</code></pre></li>
+<li><p>Check it against what you meant. The AI fixed the spelling,
+grammar and capitals, and split the run-on sentence. It should not have
+changed what you asked or added anything new. If a word is wrong, click
+in the right-hand box and fix it.</p></li>
+<li><p>Press <strong>Copy</strong>, switch to your email, and
+paste.</p></li>
+</ol>
+<h3 id="what-you-just-did">What you just did</h3>
+<p>You got a clean message without your health details leaving the
+computer. You can confirm that for yourself: turn Wi-Fi off and do it
+again. It still works.</p>
+<h3 id="try-next">Try next</h3>
+<ul>
+<li>Press <strong>Use as my text</strong> to move the result back to the
+left, add a sentence, and clean up again.</li>
+<li>Press <strong>Save to file</strong> to keep a copy.</li>
+</ul>
 </section>
-<section class="tutorial" id="01-why-confidant-e">
-<h2>Why confidant·e</h2>
-<p class="sub">About 1½ minutes</p>
-<h3>The problem</h3>
-<p>Most AI writing tools work the same way. You type, and your words are sent to a company&#x27;s servers.</p>
-<p>For a birthday message, who cares. But what about a letter to your doctor? A note about a client? A question you would not want anyone else to read?</p>
-<h3>The idea</h3>
-<p>confidant·e does the same job with an AI that runs on your own Mac.</p>
-<p>Look, my Wi-Fi is off. Nothing I type here can go anywhere.</p>
-<h3>Proof</h3>
-<p>I press Clean up, and my rough message comes back corrected. Spelling, grammar, punctuation. My meaning and my tone are left alone.</p>
-<p>That happened entirely on this computer.</p>
-<h3>What else it does</h3>
-<p>You can also ask it questions, dictate instead of typing, keep notes it remembers between conversations, and compare different AIs to see which one suits you.</p>
-<p>There is no account and nothing to sign up for.</p>
-<h3>You stay in charge</h3>
-<p>And when you do want a stronger online AI, and the text is not sensitive, you can switch to one for that job. The app never does that for you.</p>
-<p>That is confidant·e. Private when it matters, and your choice when it does not. In the next video I will show you how to get set up.</p>
+<section class="tutorial" id="02-dictate-a-message">
+<h2 id="speak-your-thoughts-send-a-finished-message">Speak your
+thoughts, send a finished message</h2>
+<p><strong>You will:</strong> dictate a rambling message out loud and
+turn it into a short, clear one.<br />
+<strong>Time:</strong> 4 minutes<br />
+<strong>You need:</strong> the built-in AI, and a microphone (the one in
+your Mac is fine).</p>
+<h3 id="the-situation">The situation</h3>
+<p>You owe a colleague an update. You know what you want to say, but
+typing it out feels like work. Talking is easier.</p>
+<h3 id="steps">Steps</h3>
+<ol type="1">
+<li><p>Open the <strong>Dictate with</strong> menu at the top and choose
+<strong>Whisper base (local, fast)</strong>. With Whisper, your speech
+is recognised on your Mac. The first time, it downloads a small model
+and tells you so in a bar at the top.</p></li>
+<li><p>Press <strong>Dictate</strong>. If your Mac asks to use the
+microphone, allow it.</p></li>
+<li><p>Say something like this, the way you would actually say it:</p>
+<blockquote>
+<p>Hi Sam, um, so I looked at the numbers you sent, and I think, well,
+the March ones look fine but April is off, I think there's a column
+missing, the one for returns. Can you check that? No rush, end of the
+week is fine. Oh, and thanks for getting it to me early.</p>
+</blockquote></li>
+<li><p>Press <strong>Stop dictating</strong>. Your words are in
+<strong>Your text</strong>, with the ums and the restarts.</p></li>
+<li><p>Press <strong>Clean up</strong>. The result should read something
+like:</p>
+<pre class="text"><code>Hi Sam,
+
+I looked at the numbers you sent. The March figures look fine, but April is
+off; I think the column for returns is missing. Can you check that? There is
+no rush; the end of the week is fine.
+
+Thanks for getting it to me early.</code></pre></li>
+<li><p>Decide whether it still sounds like you. The AI keeps your
+meaning and tone, but if it made you more formal than you like, edit the
+right-hand box directly.</p></li>
+<li><p>Want to add something? Press <strong>Use as my text</strong> to
+move the result to the left, press <strong>Dictate</strong> again, and
+say the extra sentence. It is added after what is already there. Then
+<strong>Clean up</strong> once more.</p></li>
+<li><p>Press <strong>Copy</strong> and paste it wherever it is
+going.</p></li>
+</ol>
+<h3 id="what-you-just-did">What you just did</h3>
+<p>You wrote a message without typing it, and neither your voice nor
+your words left the Mac.</p>
+<h3 id="good-to-know">Good to know</h3>
+<ul>
+<li><strong>Apple dictation</strong> in the same menu starts instantly
+with no download, but your speech may be sent to Apple. Use it for
+things that are not sensitive.</li>
+<li><strong>Whisper small</strong> is more accurate than Whisper base
+and a little slower.</li>
+</ul>
 </section>
-<section class="tutorial" id="02-getting-started">
-<h2>Getting started</h2>
-<p class="sub">About 2 minutes</p>
-<audio controls preload="none" src="audio/02-getting-started.m4a"></audio>
-<p class="note">Recorded by Nader Amir.</p>
-<h3>Open the app</h3>
-<p>Hello, Dr. Amir again. Getting started.</p>
-<p>When you open confidant·e for the first time, you get this welcome page. It tells you what the app does and where the AI runs.</p>
-<p>The part to notice is this box. AIs on this computer share nothing. AIs on the internet send your text out. You choose which one to use.</p>
-<h3>What you need</h3>
-<p>For the built-in AI you need a Mac with 16 gigabytes of memory and about two and a half gigabytes of free space. That&#x27;s all.</p>
-<h3>Get started</h3>
-<p>I press Get started. Because I have no AI on this Mac yet, the app offers to download the built-in one for me. I press Download.</p>
-<h3>The download</h3>
-<p>This bar shows you the progress. It&#x27;s a one-time download.</p>
-<p>Done. The built-in AI is now on your Mac.</p>
-<h3>First clean-up</h3>
-<p>You can try it. Type something rough, then press Clean up, and there&#x27;s a corrected version.</p>
-<p>The first one is a little slow while the AI loads into memory. After that, it&#x27;s much quicker.</p>
-<h3>Finding the welcome page again</h3>
-<p>If you want the welcome page again, you can get it from the Help menu. And if you would rather not see it any more, you can just untick that little check mark.</p>
+<section class="tutorial" id="03-private-question">
+<h2 id="ask-a-question-you-would-rather-keep-to-yourself">Ask a question
+you would rather keep to yourself</h2>
+<p><strong>You will:</strong> ask an AI about a personal money decision,
+follow up, and keep the useful part.<br />
+<strong>Time:</strong> 4 minutes<br />
+<strong>You need:</strong> the built-in AI.</p>
+<h3 id="the-situation">The situation</h3>
+<p>You are wondering whether to pay off a loan early or keep the cash as
+savings. You would like a clear explanation of how to think about it,
+and you would rather not type your finances into an online service.</p>
+<h3 id="steps">Steps</h3>
+<ol type="1">
+<li><p>Press <strong>Ask</strong> at the top left.</p></li>
+<li><p>Check that <strong>Answer with</strong> shows <strong>Built-in
+Gemma 3 4B</strong>, or another AI that runs on your Mac.</p></li>
+<li><p>In the box at the bottom, type:</p>
+<pre class="text"><code>I have a car loan at 7% interest with 18,000 left, and 20,000 in savings
+earning 4%. What should I think about before deciding whether to pay the
+loan off early?</code></pre></li>
+<li><p>Press <strong>Ask</strong>. The answer appears above. Expect a
+list of things to weigh: the difference between the two rates, keeping
+an emergency fund, and any penalty for early repayment.</p></li>
+<li><p>Follow up without repeating yourself. The AI remembers the
+conversation:</p>
+<pre class="text"><code>Say I keep 8,000 as an emergency fund and put the rest toward the loan.
+Roughly how much interest would that save over two years?</code></pre></li>
+<li><p>Read the numbers carefully. A small AI can make arithmetic
+mistakes and state them with confidence. Treat the answer as a way to
+organise your thinking, then check the figures yourself or with your
+bank.</p></li>
+<li><p>Rate the answers with the stars underneath. This costs nothing
+now and helps later, when you compare AIs.</p></li>
+<li><p>Press the copy button under the answer you want to keep, and
+paste it into your notes.</p></li>
+</ol>
+<h3 id="what-you-just-did">What you just did</h3>
+<p>You talked through a private decision. With an AI on your Mac, the
+question, your numbers and the answers stayed on the computer.</p>
+<h3 id="good-to-know">Good to know</h3>
+<ul>
+<li>The conversation is still there when you reopen the app. To clear
+it, press <strong>New conversation</strong>.</li>
+<li>An AI is not a financial adviser, a doctor or a lawyer. Use it to
+prepare better questions for one.</li>
+</ul>
 </section>
-<section class="tutorial" id="03-clean-up">
-<h2>Clean up your writing</h2>
-<p class="sub">About 2 minutes</p>
-<h3>Paste</h3>
-<p>This is Clean up. Two boxes. Your text goes on the left. I will paste in something I wrote in a hurry.</p>
-<h3>Clean up</h3>
-<p>I press Clean up. You can also press Command and Return.</p>
-<p>Down here the app tells me what it is doing and how long it has taken.</p>
-<h3>Read the result</h3>
-<p>Here is the result. It fixed the spelling here, split this long sentence in two, and put the capital letters back.</p>
-<p>What it did not do is rewrite me. The meaning and the tone are still mine. Do read it before you send it, because an AI can get things wrong.</p>
-<h3>Edit and repeat</h3>
-<p>I can edit the result right here. Or I press Use as my text, which moves it to the left so I can add to it and clean up again.</p>
-<h3>Take it with you</h3>
-<p>Copy puts it on the clipboard, ready to paste into an email. Save to file keeps it as a file. I cover files in a later video.</p>
-<h3>Stop</h3>
-<p>If a run is going wrong, press Stop.</p>
-<p>And you do not have to worry about losing your text. The app keeps it, so it is still here when you come back. Next, dictating instead of typing.</p>
+<section class="tutorial" id="04-find-your-best-ai">
+<h2 id="find-out-which-ai-is-best-for-your-own-questions">Find out which
+AI is best for your own questions</h2>
+<p><strong>You will:</strong> test two AIs on questions you actually
+ask, without knowing which is which, and see a score.<br />
+<strong>Time:</strong> 10 minutes, mostly waiting<br />
+<strong>You need:</strong> at least two AIs. The built-in one plus one
+Ollama model is enough.</p>
+<h3 id="the-situation">The situation</h3>
+<p>You have the small built-in AI and a larger one in Ollama. The larger
+one is slower. Is it better enough to be worth it for the things you
+ask? Opinions online will not tell you. Your own questions will.</p>
+<h3 id="part-1-one-question-blind">Part 1: one question, blind</h3>
+<ol type="1">
+<li><p>Press <strong>Ask</strong>.</p></li>
+<li><p>Type a question of the kind you really ask. For example:</p>
+<pre class="text"><code>Explain the difference between &quot;affect&quot; and &quot;effect&quot; in two sentences,
+with one example of each.</code></pre></li>
+<li><p>Press <strong>Compare blind</strong> instead of Ask.</p></li>
+<li><p>Choose your two AIs as <strong>First model</strong> and
+<strong>Second model</strong>, and press
+<strong>Compare</strong>.</p></li>
+<li><p>Wait while each answers in turn. They appear as <strong>Answer
+A</strong> and <strong>Answer B</strong>. The names are hidden and the
+order is random, so you cannot tell which is which.</p></li>
+<li><p>Read both. Press <strong>A is better</strong>, <strong>B is
+better</strong> or <strong>About the same</strong>.</p></li>
+<li><p>Now the names appear. Was it the one you expected?</p></li>
+<li><p>For a second opinion, press <strong>Have the selected model
+judge</strong>. The AI chosen in the menu reads the question and both
+answers, picks one and gives a reason.</p></li>
+</ol>
+<h3 id="part-2-a-set-of-your-own-questions">Part 2: a set of your own
+questions</h3>
+<p>One question proves little. Five or ten start to mean something.</p>
+<ol type="1">
+<li><p>Press <strong>Question set</strong>.</p></li>
+<li><p>Add questions one at a time: type each in the box and press
+<strong>Add</strong>. Use real ones. For example:</p>
+<pre class="text"><code>Rewrite this to sound friendlier: &quot;Your request has been denied.&quot;</code></pre>
+<pre class="text"><code>What are three questions I should ask before signing a lease?</code></pre>
+<pre class="text"><code>Summarise the causes of the First World War in four sentences.</code></pre></li>
+<li><p>Under <strong>Models to ask</strong>, tick the AIs to
+test.</p></li>
+<li><p>Tick <strong>Hide which model wrote which answer</strong>, and
+tick the option to have an AI judge each question.</p></li>
+<li><p>Press <strong>Run</strong>. Every AI answers every question, one
+at a time. This is the moment to make coffee.</p></li>
+<li><p>When it finishes, go through the questions and pick the better
+answer for each.</p></li>
+</ol>
+<h3 id="part-3-read-the-score">Part 3: read the score</h3>
+<p>Press <strong>Compare ratings</strong>. For each AI you see:</p>
+<ul>
+<li>how often you preferred it,</li>
+<li>how often the AI judge preferred it,</li>
+<li>its average star rating.</li>
+</ul>
+<h3 id="what-you-just-did">What you just did</h3>
+<p>You measured the AIs on your own work. If the small local one wins or
+ties, you never need anything bigger. If the large one clearly wins, you
+know the extra memory is buying you something.</p>
+<h3 id="good-to-know">Good to know</h3>
+<ul>
+<li>Your questions are saved. Open <strong>Question set</strong> again
+next month, when a new model comes out, and press
+<strong>Run</strong>.</li>
+<li>An AI judging its own answer may favour itself. Your own blind picks
+are the stronger evidence.</li>
+<li>You can include Claude in a comparison. Its answers are sent to
+Anthropic, so only use questions you are happy to share.</li>
+</ul>
 </section>
-<section class="tutorial" id="04-dictation">
-<h2>Dictate instead of typing</h2>
-<p class="sub">About 1½ minutes</p>
-<h3>Press Dictate</h3>
-<p>If you would rather talk than type, press Dictate.</p>
-<p>The first time, your Mac asks for permission to use the microphone. Say yes.</p>
-<h3>Speak</h3>
-<p>Now I just talk. Hi Sam, sorry I missed your call, I was, um, in a meeting. Can we talk tomorrow morning instead.</p>
-<h3>Stop and clean up</h3>
-<p>I press Stop dictating. What I said is here, stumbles and all. Then Clean up turns it into something I can send.</p>
-<h3>Choosing how speech is recognised</h3>
-<p>Up here you choose how your speech is recognised.</p>
-<p>Apple dictation is the default. It works straight away, but your speech may be sent to Apple.</p>
-<p>The two Whisper choices recognise your speech on this Mac. Nothing is sent anywhere. So for anything private, choose Whisper. The first time, it downloads a small model.</p>
-<h3>In Ask mode too</h3>
-<p>Dictation works for questions as well. In Ask, it is this microphone button. Ask is the next video.</p>
+<section class="tutorial" id="05-a-project-over-several-days">
+<h2 id="keep-a-project-going-over-several-days">Keep a project going
+over several days</h2>
+<p><strong>You will:</strong> work on something across more than one
+sitting, with the AI remembering what matters.<br />
+<strong>Time:</strong> 5 minutes today, 2 minutes tomorrow<br />
+<strong>You need:</strong> the built-in AI.</p>
+<h3 id="the-situation">The situation</h3>
+<p>You are planning a talk for a community group. You will think about
+it today, come back tomorrow, and again next week. You do not want to
+explain the whole thing from the start every time.</p>
+<h3 id="day-1-start-and-save-what-matters">Day 1: start, and save what
+matters</h3>
+<ol type="1">
+<li><p>Press <strong>Ask</strong> and describe the project:</p>
+<pre class="text"><code>I&#39;m giving a 15-minute talk to a neighbourhood association about starting a
+community garden. The audience is about 30 people, mostly retired, and
+some are sceptical about the cost. Help me outline it.</code></pre></li>
+<li><p>Ask a follow-up or two until the outline is useful. For example:
+<code>Make the cost section more concrete.</code></p></li>
+<li><p>Press <strong>Memory</strong>. It is empty the first
+time.</p></li>
+<li><p>Press <strong>Add this conversation, using …</strong>. The AI
+writes short notes: the talk, the audience, the length, what you have
+decided, what is still open.</p></li>
+<li><p>Read the notes. Correct anything wrong and delete anything you do
+not want kept. Then press <strong>Save</strong>.</p></li>
+<li><p>Press <strong>Save conversation</strong> and save the file
+somewhere you will find it, such as a folder for the talk. The name
+already contains today's date.</p></li>
+</ol>
+<h3 id="day-2-pick-it-up">Day 2: pick it up</h3>
+<ol type="1">
+<li><p>Open the app and press <strong>Ask</strong>. Press <strong>New
+conversation</strong> if yesterday's is still showing, and choose
+<strong>Start new without</strong>.</p></li>
+<li><p>Ask something that only makes sense if it remembers:</p>
+<pre class="text"><code>Suggest an opening line for the talk.</code></pre></li>
+<li><p>The answer should already know it is a 15-minute talk about a
+community garden for a sceptical, mostly retired audience. That came
+from Memory.</p></li>
+<li><p>Need the full outline back? Press <strong>Open
+conversation</strong> and choose yesterday's file. The whole
+conversation returns and you can carry on from the last answer. The app
+also switches back to the AI you were using.</p></li>
+<li><p>When you finish today, press <strong>New conversation</strong>.
+This time, choose <strong>Update Memory</strong> when asked, check the
+notes, and save.</p></li>
+</ol>
+<h3 id="what-you-just-did">What you just did</h3>
+<p>You used two things together. <strong>Memory</strong> keeps the short
+list of what matters, and is given to the AI every time. <strong>Saved
+conversations</strong> keep the full detail, for when you need it.</p>
+<h3 id="good-to-know">Good to know</h3>
+<ul>
+<li>Memory is plain text. You can type into it yourself:
+<code>I prefer short answers.</code></li>
+<li>Memory is sent to whichever AI you ask. If you switch to Claude, the
+notes go to Anthropic with your question.</li>
+<li>When the project is over, open Memory, delete the notes about it,
+and press <strong>Save</strong>.</li>
+</ul>
 </section>
-<section class="tutorial" id="05-ask">
-<h2>Ask in private</h2>
-<p class="sub">About 2 minutes</p>
-<h3>Switch to Ask</h3>
-<p>Clean up fixes your writing. Ask is for questions. I switch with this button.</p>
-<h3>Ask something</h3>
-<p>I type a question down here and press Ask, or Return.</p>
-<p>The answer appears above. And because I am using an AI on this Mac, that question went nowhere.</p>
-<h3>Follow up</h3>
-<p>It remembers the conversation, so I can follow up without repeating myself.</p>
-<h3>Under each answer</h3>
-<p>Under each answer I can rate it with stars, copy it, and see how long it took. The ratings matter later, when we compare AIs.</p>
-<h3>It is still there tomorrow</h3>
-<p>If I quit and come back, the conversation is still here.</p>
-<h3>A fresh start</h3>
-<p>For a new topic, press New conversation. The app asks whether to add this conversation to Memory first. I will explain Memory in its own video. For now I start without.</p>
-<p>One caution. AIs can be confidently wrong. Check anything that matters. Next, choosing which AI to use.</p>
-</section>
-<section class="tutorial" id="06-choosing-an-ai">
-<h2>Choosing your AI, local or online</h2>
-<p class="sub">About 2½ minutes</p>
-<h3>The menu</h3>
-<p>This menu lists every AI you can use. They fall into two groups, and the difference is where your text goes.</p>
-<h3>On this Mac</h3>
-<p>These run on this Mac. The built-in one comes with the app. The others come from a free app called Ollama, and if you have it installed, its models show up here.</p>
-<p>With any of these, nothing you write leaves the computer.</p>
-<h3>What they need</h3>
-<p>Local AIs need memory. The built-in one runs on a Mac with sixteen gigabytes. Bigger models give better answers and need more: thirty-two to sixty-four gigabytes for mid-sized ones, and a hundred and twenty-eight is recommended for the most powerful.</p>
-<h3>On the internet</h3>
-<p>This one is different. Claude runs on the internet, at a company called Anthropic. It is much stronger. But what you send it leaves your Mac.</p>
-<h3>Adding a key</h3>
-<p>To use Claude you need your own API key from Anthropic, which you create at platform dot claude dot com. Anthropic bills you for what you use.</p>
-<p>I press Add Claude API key, paste it in, and save. It is kept in the Mac&#x27;s Keychain, so I only do this once.</p>
-<h3>Use it for one job</h3>
-<p>Now I can pick Claude for a job where I want the best result and the text is not sensitive. Then I switch back.</p>
-<p>The app never chooses an online AI for you. My rule is simple. Private things, local AI. Everything else, your choice.</p>
-</section>
-<section class="tutorial" id="07-memory">
-<h2>Memory</h2>
-<p class="sub">About 2 minutes</p>
-<h3>The problem</h3>
-<p>Every new conversation with an AI normally starts from zero. You explain yourself again each time.</p>
-<p>Memory fixes that. It is a page of notes that carries over from one conversation to the next.</p>
-<h3>Open Memory</h3>
-<p>I press Memory. It is empty, because nothing is remembered yet.</p>
-<h3>Let the AI write the notes</h3>
-<p>I press Add this conversation. The AI reads what we just talked about and writes notes: the lasting facts, my preferences, what is still undecided.</p>
-<h3>Check and edit</h3>
-<p>And this is the important part. I can read it. This line I do not want kept, so I delete it. This one is slightly wrong, so I fix it.</p>
-<p>Nothing is saved until I press Save.</p>
-<h3>See it work</h3>
-<p>Now a brand new conversation. I ask a question that only makes sense if it remembers.</p>
-<p>And it does. It knows where I am going and when.</p>
-<h3>The shortcut</h3>
-<p>You do not have to remember to do this. Whenever you press New conversation, the app offers to update Memory first.</p>
-<h3>What to know</h3>
-<p>Two things to know. The notes live on your Mac, and you can change or clear them at any time.</p>
-<p>And they are sent with each question to whichever AI you ask. So if you ask Claude, the notes go to Anthropic too.</p>
-</section>
-<section class="tutorial" id="08-files">
-<h2>Saving and opening files</h2>
-<p class="sub">About 2 minutes</p>
-<h3>Why files</h3>
-<p>The app already keeps your current text and conversation. Files are for when you want to keep several, or move your work somewhere else.</p>
-<h3>Save writing</h3>
-<p>I press Save to file. The name already has today&#x27;s date and the time in it. I save it.</p>
-<h3>Open writing</h3>
-<p>Later, Open file brings a text file back into Your text.</p>
-<h3>Save a conversation</h3>
-<p>Conversations work the same way. Save conversation.</p>
-<h3>It is a readable file</h3>
-<p>The file is plain text you can read anywhere. At the top it records when it was saved, which AI I was using and how I was dictating.</p>
-<h3>Carry on later</h3>
-<p>Now watch the menu at the top. I have switched to a different AI. I open the saved conversation.</p>
-<p>The conversation is back, and the app has switched to the AI it was saved with. I can carry on exactly where I stopped.</p>
-<h3>If the AI is missing</h3>
-<p>If you open a file on a Mac that does not have that AI, the app tells you and keeps the one you have selected.</p>
-<p>Memory can be saved and loaded as a file too, from inside the Memory box.</p>
-</section>
-<section class="tutorial" id="09-comparing-ais">
-<h2>Comparing AIs</h2>
-<p class="sub">About 3 minutes</p>
-<audio controls preload="none" src="audio/09-comparing-ais.m4a"></audio>
-<p class="note">Recorded by Nader Amir.</p>
-<h3>Why compare</h3>
-<p>Hello again. Comparing AIs.</p>
-<p>If you have more than one AI, which one should you use? People have strong opinions. confidant·e lets you find out for your own questions.</p>
-<p>Of course, there are different ways of defining good. One is accuracy. Two is complexity. And for the purpose of this app, a third, and probably the most important, is confidentiality. A more competent AI might be a very good one to use in some situations, but it might also be one that you cannot use, for various reasons including privacy.</p>
-<p>confidant·e will allow you to actually compare some of the answers, to get an idea of which models you should use.</p>
-<h3>The same question twice</h3>
-<p>The simple way is to ask a question. You can pick a question, and then ask it of a different AI by selecting the model.</p>
-<p>As soon as you do this, you have two answers side by side. You can then rate each one with stars, so you can later on decide which AI to continue using.</p>
-<h3>Compare blind</h3>
-<p>But in this case I can see the names, and I may be biased. So there is Compare blind. I type a question, press Compare blind, and pick the two AIs.</p>
-<h3>Pick a winner</h3>
-<p>The answers come back as A and B. I read them and choose the better one.</p>
-<p>Only now does the app tell me which AI wrote which.</p>
-<h3>Ask an AI to judge</h3>
-<p>I can also ask an AI for a second opinion. It reads the question and both answers, and picks the one that it thinks is actually the better answer.</p>
-<h3>A question set</h3>
-<p>One question, of course, reveals very little. So I can save a set of my own questions and run all of them across every AI in one go.</p>
-<p>I add a question, tick the AIs, hide the names, and have a judge look at each. Then Run, and I go and make some coffee. When I come back, the AIs have produced multiple answers.</p>
-<h3>The results</h3>
-<p>Compare ratings adds it all up for each AI: how often I preferred it, how often the judge preferred it, and its average stars.</p>
-<p>Now I know which AI is best for me, on my own questions. If the small local one is good enough, I never need to send text anywhere. Or I know that I need to invest in more hardware, a better Mac with more memory, so I can download a more powerful local AI.</p>
-<h3>Close</h3>
-<p>This is hopefully the beginning of your journey. confidant·e allows you to explore various options in using AI: asking questions, rating the answers, and also using it for your writing.</p>
-<p>I hope you find it useful. Thank you very much.</p>
+<section class="tutorial" id="06-online-ai-for-one-job">
+<h2 id="use-an-online-ai-for-one-job-then-go-back-to-private">Use an
+online AI for one job, then go back to private</h2>
+<p><strong>You will:</strong> set up Claude, use it for something that
+is not sensitive, compare it with your local AI, and switch back.<br />
+<strong>Time:</strong> 5 minutes, plus creating a key<br />
+<strong>You need:</strong> an internet connection and an Anthropic API
+key. Anthropic charges for usage.</p>
+<h3 id="the-situation">The situation</h3>
+<p>You are writing a public announcement for a club newsletter. Nothing
+in it is private, and you want the most polished result you can get.
+This is a reasonable job for a stronger online AI.</p>
+<h3 id="steps">Steps</h3>
+<ol type="1">
+<li><p>Get a key. Go to platform.claude.com, sign in, and create an API
+key. Copy it. Treat it like a password: anyone who has it can spend your
+money.</p></li>
+<li><p>In confidant·e, press <strong>Add Claude API key</strong> at the
+top right. Read the note in the box: text you send to Claude leaves your
+Mac. Paste the key and press <strong>Save</strong>. It is stored in your
+Mac's Keychain, and the button now reads <strong>Claude API key
+saved</strong>.</p></li>
+<li><p>Type or paste your draft into <strong>Your text</strong>:</p>
+<pre class="text"><code>hey everyone the spring plant sale is on saturday april 12 from 9 to 1 at
+the community hall. we need volunteers for setup friday night and for the
+tills on the day, let maria know if you can help. bring your own bags!!</code></pre></li>
+<li><p>Press <strong>Clean up</strong> with your local AI still
+selected. Press <strong>Copy</strong> and paste the result somewhere to
+compare, such as a note.</p></li>
+<li><p>Now open the <strong>Clean up with</strong> menu and choose
+<strong>Claude Opus 5.5 (cloud)</strong>.</p></li>
+<li><p>Press <strong>Clean up</strong> again. Compare the two results.
+Is Claude's better enough to matter for this kind of text?</p></li>
+<li><p><strong>Switch back.</strong> Open the menu and choose
+<strong>Built-in Gemma 3 4B</strong> again. The app remembers your last
+choice, so if you leave Claude selected, your next piece of writing goes
+to Anthropic too.</p></li>
+</ol>
+<h3 id="what-you-just-did">What you just did</h3>
+<p>You used an online AI on purpose, for text you were happy to share,
+and returned to a private one. The app never makes that switch for
+you.</p>
+<h3 id="a-rule-that-works">A rule that works</h3>
+<ul>
+<li>Private or about another person: an AI on your Mac.</li>
+<li>Public anyway, and you want the best: Claude is fine.</li>
+<li>Not sure: treat it as private.</li>
+</ul>
+<h3 id="good-to-know">Good to know</h3>
+<ul>
+<li>To stop using Claude, press <strong>Claude API key saved</strong>
+and choose <strong>Remove key</strong>.</li>
+<li>If you use Memory, your notes are sent along with questions you ask
+Claude. Clear or trim them first if they contain something private.</li>
+<li>For a fair test of whether you need Claude at all, see "Find out
+which AI is best for your own questions".</li>
+</ul>
 </section>
 <footer>confidant·e · Nader Amir</footer>
 </body></html>

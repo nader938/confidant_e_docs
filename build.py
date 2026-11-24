@@ -2,11 +2,10 @@
 
     python3 store/site/build.py
 
-Reads docs/user-guide.md and the tutorial scripts in docs/videos/, and writes
-guide.html and tutorials.html beside this file. A tutorial gets an audio
-player when store/site/audio/ holds <script name>.m4a (a real recording) or
-<script name>.mp3 (generated narration). Nothing is uploaded:
-publishing is a separate commit and push of this folder.
+Reads docs/user-guide.md and the worked examples in docs/tutorials/, and
+writes guide.html and tutorials.html beside this file. Guide sections listed
+in RECORDINGS get an audio player when their recording is in audio/. Nothing
+is uploaded: publishing is a separate commit and push of this folder.
 """
 
 import html
@@ -28,6 +27,7 @@ h2{font-size:1.3rem;margin:2.5rem 0 .5rem}h3{font-size:1.05rem;margin:1.5rem 0 .
 .sub{color:#5b5d72;margin:0 0 1.5rem}a{color:#4b53a8}li{margin:.35rem 0}
 .table{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:.95rem;margin:1rem 0}
 th,td{text-align:left;vertical-align:top;padding:.5rem .75rem;border-bottom:1px solid #c7c5d0}
+pre{background:rgba(120,120,140,.14);padding:.75rem 1rem;border-radius:8px;overflow-x:auto;font-size:.9rem;line-height:1.5;white-space:pre-wrap}blockquote{margin:1rem 0;padding:.1rem 1rem;border-left:3px solid #c7c5d0;color:#5b5d72}.tutorial{border-top:1px solid #c7c5d0;margin-top:2.5rem}.tutorial h2{margin-top:1.75rem}
 audio{width:100%;margin:.5rem 0 0}.note{font-size:.85rem;color:#5b5d72;margin:.25rem 0 1rem}
 .tutorial{padding-top:.5rem}
 footer{margin-top:3rem;padding-top:1rem;border-top:1px solid #c7c5d0;font-size:.9rem;color:#5b5d72}
@@ -47,79 +47,65 @@ def page(title: str, body: str) -> str:
     )
 
 
-def guide() -> str:
-    text = (DOCS / "user-guide.md").read_text()
-    text = text.replace("](videos/README.md)", "](tutorials.html)")
+def pandoc(markdown: str) -> str:
     body = subprocess.run(
-        ["pandoc", "-f", "gfm", "-t", "html"],
-        input=text,
+        ["pandoc", "-f", "gfm", "-t", "html", "--no-highlight"],
+        input=markdown,
         capture_output=True,
         text=True,
         check=True,
     ).stdout
     # Wide tables scroll inside themselves on a phone.
-    body = body.replace("<table>", '<div class="table"><table>').replace(
+    return body.replace("<table>", '<div class="table"><table>').replace(
         "</table>", "</table></div>"
     )
+
+
+# Guide sections that open with a recording of the author talking about them.
+RECORDINGS = {
+    "1-why-use-it": ("00-intro", "An introduction"),
+    "3-getting-started": ("02-getting-started", "Getting started"),
+    "10-compare-ais": ("09-comparing-ais", "Comparing AIs"),
+}
+
+
+def guide() -> str:
+    text = (DOCS / "user-guide.md").read_text()
+    text = text.replace("](videos/README.md)", "](tutorials.html)")
+    body = pandoc(text)
+    for section, (name, title) in RECORDINGS.items():
+        if not (SITE / "audio" / f"{name}.m4a").exists():
+            continue
+        heading = re.search(rf'<h2 id="{section}">.*?</h2>', body, flags=re.S)
+        if heading:
+            player = (
+                f'\n<audio controls preload="none" src="audio/{name}.m4a">'
+                f'</audio>\n<p class="note">Listen: {html.escape(title)}, '
+                "recorded by Nader Amir.</p>"
+            )
+            body = body[: heading.end()] + player + body[heading.end() :]
     return page("confidant·e User Guide", body)
 
 
-def beats(script: Path):
-    """Yields (heading, [paragraphs]) of narration for each beat."""
-    for part in re.split(r"^### ", script.read_text(), flags=re.M)[1:]:
-        heading, _, rest = part.partition("\n")
-        heading = re.sub(r"^\d+\.\s*", "", heading).strip()
-        say = rest.partition("**Say:**")[2]
-        quoted = "\n".join(
-            line[1:].strip() for line in say.splitlines() if line.startswith(">")
-        )
-        paragraphs = [p.replace("\n", " ") for p in re.split(r"\n\s*\n", quoted)]
-        paragraphs = [p.strip() for p in paragraphs if p.strip()]
-        if paragraphs:
-            yield heading, paragraphs
-
-
 def tutorials() -> str:
-    scripts = sorted((DOCS / "videos").glob("[0-9][0-9]-*.md"))
+    """The worked examples in docs/tutorials, one after another."""
     entries, contents = [], []
-    for script in scripts:
-        text = script.read_text()
-        title = re.sub(r"^Video \d+:\s*", "", text.splitlines()[0].lstrip("# "))
-        length = re.search(r"\*\*Length:\*\* about ([^\n]*?)\s*$", text, re.M)
-        slug = script.stem
+    for source in sorted((DOCS / "tutorials").glob("[0-9][0-9]-*.md")):
+        text = source.read_text()
+        title = text.splitlines()[0].lstrip("# ").strip()
+        slug = source.stem
         contents.append(f'<li><a href="#{slug}">{html.escape(title)}</a></li>')
-        entry = [f'<section class="tutorial" id="{slug}">']
-        entry.append(f"<h2>{html.escape(title)}</h2>")
-        if length:
-            entry.append(f'<p class="sub">About {html.escape(length.group(1))}</p>')
-        # A real recording (.m4a) is used when there is one; otherwise the
-        # generated narration (.mp3), which is labelled as such.
-        for kind, note in [
-            ("m4a", "Recorded by Nader Amir."),
-            (
-                "mp3",
-                "Narration generated by AI in the author's voice, from the "
-                "text below.",
-            ),
-        ]:
-            if (SITE / "audio" / f"{slug}.{kind}").exists():
-                entry.append(
-                    f'<audio controls preload="none" src="audio/{slug}.{kind}">'
-                    "</audio>"
-                )
-                entry.append(f'<p class="note">{note}</p>')
-                break
-        for heading, paragraphs in beats(script):
-            entry.append(f"<h3>{html.escape(heading)}</h3>")
-            entry += [f"<p>{html.escape(p)}</p>" for p in paragraphs]
-        entry.append("</section>")
-        entries.append("\n".join(entry))
+        # The page has one title; each tutorial's headings sit a level down.
+        lowered = re.sub(r"^(#{1,5}) ", r"#\1 ", text, flags=re.M)
+        entries.append(
+            f'<section class="tutorial" id="{slug}">\n{pandoc(lowered)}</section>'
+        )
     body = (
         "<h1>Tutorials</h1>\n"
-        '<p class="sub">Short walk-throughs of confidant·e, to listen to or '
-        "read. Each one matches a section of the "
-        '<a href="guide.html">user guide</a>.</p>\n'
-        f"<ol start=\"0\">\n{chr(10).join(contents)}\n</ol>\n" + "\n".join(entries)
+        '<p class="sub">Worked examples: real tasks from start to finish, '
+        "with text to type and what to expect. For a description of every "
+        'feature, see the <a href="guide.html">user guide</a>.</p>\n'
+        f"<ol>\n{chr(10).join(contents)}\n</ol>\n" + "\n".join(entries)
     )
     return page("confidant·e Tutorials", body)
 
