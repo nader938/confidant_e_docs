@@ -1,0 +1,358 @@
+<!doctype html><html lang="en"><head><title>confidant·e User Guide</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root{color-scheme:light dark}
+body{font:17px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;max-width:44rem;margin:0 auto;padding:1.5rem 1.25rem 4rem;color:#1b1b21;background:#fbf8ff}
+nav{display:flex;flex-wrap:wrap;gap:.25rem 1.25rem;padding-bottom:.9rem;margin-bottom:2rem;border-bottom:1px solid #c7c5d0;font-size:.95rem}
+nav strong{margin-right:auto}
+h1{font-size:1.9rem;line-height:1.2;margin:0 0 .5rem}
+h2{font-size:1.3rem;margin:2.5rem 0 .5rem}h3{font-size:1.05rem;margin:1.5rem 0 .3rem}
+.sub{color:#5b5d72;margin:0 0 1.5rem}a{color:#4b53a8}li{margin:.35rem 0}
+.table{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:.95rem;margin:1rem 0}
+th,td{text-align:left;vertical-align:top;padding:.5rem .75rem;border-bottom:1px solid #c7c5d0}
+audio{width:100%;margin:.5rem 0 0}.note{font-size:.85rem;color:#5b5d72;margin:.25rem 0 1rem}
+.tutorial{padding-top:.5rem}
+footer{margin-top:3rem;padding-top:1rem;border-top:1px solid #c7c5d0;font-size:.9rem;color:#5b5d72}
+@media (prefers-color-scheme:dark){body{color:#e4e1e9;background:#131318}.sub,footer{color:#c7c5d0}a{color:#bdc2ff}nav,th,td,footer{border-color:#46464f}}
+</style></head><body>
+<nav><strong>confidant·e</strong>
+<a href="./">Support</a><a href="guide.html">User guide</a>
+<a href="tutorials.html">Tutorials</a><a href="privacy.html">Privacy</a></nav>
+<h1 id="confidante-user-guide">confidant·e user guide</h1>
+<p>confidant·e helps you write and lets you ask an AI questions, with
+the AI running on your own Mac if you want it to. This guide covers
+everything in the app. Each section matches one of the tutorial videos
+in <a href="tutorials.html">videos/</a>.</p>
+<p>Contents:</p>
+<ol type="1">
+<li><a href="#1-why-use-it">Why use it</a></li>
+<li><a href="#2-what-you-need">What you need</a></li>
+<li><a href="#3-getting-started">Getting started</a></li>
+<li><a href="#4-clean-up-your-writing">Clean up your writing</a></li>
+<li><a href="#5-dictate-instead-of-typing">Dictate instead of
+typing</a></li>
+<li><a href="#6-ask-a-question">Ask a question</a></li>
+<li><a href="#7-choose-your-ai">Choose your AI</a></li>
+<li><a href="#8-memory">Memory</a></li>
+<li><a href="#9-save-and-open-files">Save and open files</a></li>
+<li><a href="#10-compare-ais">Compare AIs</a></li>
+<li><a href="#11-privacy-at-a-glance">Privacy at a glance</a></li>
+<li><a href="#12-problems-and-fixes">Problems and fixes</a></li>
+</ol>
+<h2 id="1-why-use-it">1. Why use it</h2>
+<p>Most AI writing tools send what you type to a company's servers. That
+is fine for a birthday message. It is not fine for a letter to your
+doctor, a note about a client, a draft about a colleague, or a question
+you would rather nobody else saw.</p>
+<p>confidant·e can do the same work with an AI that runs on your
+Mac:</p>
+<ul>
+<li><strong>Your words stay with you.</strong> With a local AI, nothing
+you write or ask leaves the computer.</li>
+<li><strong>It works offline.</strong> Once the AI is downloaded, you do
+not need the internet.</li>
+<li><strong>No account.</strong> There is nothing to sign up for and
+nothing to log in to.</li>
+<li><strong>You choose.</strong> When you want a stronger online AI and
+do not mind sharing, you can switch to Claude for that one job.</li>
+</ul>
+<h2 id="2-what-you-need">2. What you need</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th>To use</th>
+<th>You need</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The built-in AI</td>
+<td>A Mac with macOS 14 or later, 16 GB of memory, and about 2.5 GB of
+free disk space for a one-time download</td>
+</tr>
+<tr>
+<td>Larger local AIs</td>
+<td>The free Ollama app, and more memory: 32 to 64 GB for mid-sized
+models, 128 GB recommended for the most powerful</td>
+</tr>
+<tr>
+<td>Claude (online)</td>
+<td>An internet connection and your own Anthropic API key, which
+Anthropic bills for what you send</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="3-getting-started">3. Getting started</h2>
+<ol type="1">
+<li>Open confidant·e. The first thing you see is the welcome page. Read
+it, then press <strong>Get started</strong>.</li>
+<li>If no AI is ready on your Mac, the app offers to download the
+built-in one. Press <strong>Download</strong>. It is about 2.5 GB and
+only happens once.</li>
+<li>A bar at the top shows the download's progress. When it finishes,
+the built-in AI is selected for you.</li>
+</ol>
+<p>If you dismissed the offer, open the <strong>Clean up with</strong>
+menu at the top and choose <strong>Built-in Gemma 3 4B … ·
+download</strong>.</p>
+<p>To see the welcome page again, use <strong>Help &gt; Welcome to
+confidant·e</strong> or the <strong>?</strong> button at the top right.
+Untick <strong>Show this when the app opens</strong> on that page if you
+do not want it at every launch.</p>
+<h2 id="4-clean-up-your-writing">4. Clean up your writing</h2>
+<p>The app opens in <strong>Clean up</strong> mode, with two boxes side
+by side.</p>
+<ol type="1">
+<li>Type or paste your rough text into <strong>Your text</strong> on the
+left.</li>
+<li>Press <strong>Clean up</strong> (or Command-Return).</li>
+<li>The corrected version appears in <strong>Cleaned up</strong> on the
+right.</li>
+</ol>
+<p>The AI fixes spelling, grammar and punctuation and smooths awkward
+sentences. It keeps your meaning, your tone and your paragraphs.</p>
+<p>While it works, a line under the boxes shows a timer and what is
+happening. The first run after opening the app is slower because the AI
+has to load into memory. When it finishes, the line shows how long it
+took.</p>
+<p>What you can do with the result:</p>
+<ul>
+<li><strong>Copy</strong> puts it on the clipboard.</li>
+<li><strong>Use as my text</strong> moves it to the left box so you can
+keep editing and clean up again.</li>
+<li><strong>Save to file</strong> saves it as a file (see <a
+href="#9-save-and-open-files">section 9</a>).</li>
+<li><strong>Stop</strong> ends a run early if it is going wrong.</li>
+</ul>
+<p>You can edit the cleaned-up text directly in the right-hand box.
+Always read it before you send it: an AI can change a meaning without
+warning.</p>
+<h2 id="5-dictate-instead-of-typing">5. Dictate instead of typing</h2>
+<ol type="1">
+<li>Press <strong>Dictate</strong>. The first time, macOS asks for
+permission to use the microphone and speech recognition. Allow
+both.</li>
+<li>Speak. Your words appear in <strong>Your text</strong>, after
+anything already there.</li>
+<li>Press <strong>Stop dictating</strong> when you are done, then
+<strong>Clean up</strong> to tidy what you said.</li>
+</ol>
+<p>The <strong>Dictate with</strong> menu at the top chooses how speech
+is recognised:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Choice</th>
+<th>What it means</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Apple dictation</td>
+<td>The default. Works straight away, but your speech may be sent to
+Apple.</td>
+</tr>
+<tr>
+<td>Whisper base (local, fast)</td>
+<td>Recognised on your Mac. Downloads a small model the first time.</td>
+</tr>
+<tr>
+<td>Whisper small (local, more accurate)</td>
+<td>Recognised on your Mac, more accurate, a little slower.</td>
+</tr>
+</tbody>
+</table></div>
+<p>For anything sensitive, choose one of the Whisper options.</p>
+<p>Dictation also works in Ask mode: press the microphone button next to
+the question box.</p>
+<h2 id="6-ask-a-question">6. Ask a question</h2>
+<ol type="1">
+<li>Press <strong>Ask</strong> at the top left.</li>
+<li>Type a question in the box at the bottom and press
+<strong>Ask</strong> (or Return).</li>
+<li>The answer appears above. Ask a follow-up and the AI remembers the
+conversation so far.</li>
+</ol>
+<p>Under each answer:</p>
+<ul>
+<li><strong>Stars</strong> let you rate it from one to five.</li>
+<li><strong>Copy</strong> puts the answer on the clipboard.</li>
+<li>A line shows how long the answer took.</li>
+</ul>
+<p>The conversation is kept automatically. Close the app, open it again,
+and it is still there.</p>
+<p><strong>New conversation</strong> clears the screen for a fresh
+topic. Before it does, it offers to add the conversation to Memory (see
+<a href="#8-memory">section 8</a>).</p>
+<h2 id="7-choose-your-ai">7. Choose your AI</h2>
+<p>The menu at the top, labelled <strong>Clean up with</strong> or
+<strong>Answer with</strong>, lists every AI you can use. Change it
+whenever you like.</p>
+<h3 id="on-this-mac-nothing-is-shared">On this Mac: nothing is
+shared</h3>
+<ul>
+<li><strong>Built-in Gemma 3 4B.</strong> Comes with the app after one
+download. Good for everyday clean-up and questions, and fits a Mac with
+16 GB of memory.</li>
+<li><strong>Ollama models.</strong> If you have the free Ollama app
+installed, every model in it appears in the menu. Larger models give
+better answers but need more memory. Press the reload button next to the
+menu after installing a new one.</li>
+</ul>
+<h3 id="on-the-internet-your-text-is-sent-out">On the internet: your
+text is sent out</h3>
+<ul>
+<li><strong>Claude Opus 5.5 (cloud).</strong> A much stronger AI that
+runs at Anthropic. What you send it leaves your Mac.</li>
+</ul>
+<p>To use Claude:</p>
+<ol type="1">
+<li>Create an API key at platform.claude.com. Anthropic charges for
+usage.</li>
+<li>In the app, press <strong>Add Claude API key</strong> at the top
+right and paste the key. It is stored in your Mac's Keychain.</li>
+<li>Choose <strong>Claude Opus 5.5 (cloud)</strong> in the menu.</li>
+</ol>
+<p>The app never picks Claude for you. A simple rule: use a local AI for
+anything private, and Claude when the text is not sensitive and you want
+the best result.</p>
+<h2 id="8-memory">8. Memory</h2>
+<p>By default each new conversation starts from nothing.
+<strong>Memory</strong> is a page of notes that carries over, so the AI
+already knows what matters when you start again.</p>
+<p>To add a conversation to Memory:</p>
+<ol type="1">
+<li>In Ask mode, press <strong>Memory</strong>.</li>
+<li>Press <strong>Add this conversation, using …</strong>. The selected
+AI rewrites the notes to include what was said.</li>
+<li>Read the notes. Edit anything that is wrong or that you do not want
+kept.</li>
+<li>Press <strong>Save</strong>.</li>
+</ol>
+<p>From then on the notes are given to the AI with every question you
+ask. You can also type notes yourself, for example "I write in British
+English" or "Keep answers short".</p>
+<p>Things to know:</p>
+<ul>
+<li>Pressing <strong>New conversation</strong> offers to update Memory
+first, so you do not have to remember.</li>
+<li>Nothing is saved until you press <strong>Save</strong>.</li>
+<li>Memory is sent to whichever AI you ask. If you ask Claude, the notes
+go to Anthropic with the question.</li>
+<li>To forget everything, open Memory, delete the text and press
+<strong>Save</strong>.</li>
+</ul>
+<h2 id="9-save-and-open-files">9. Save and open files</h2>
+<p>The app keeps your current text and conversation automatically. Files
+are for keeping more than one, or moving work somewhere else.</p>
+<p><strong>Writing</strong></p>
+<ul>
+<li><strong>Save to file</strong> saves the cleaned-up text, or your own
+text if you have not cleaned it up yet.</li>
+<li><strong>Open file</strong> loads a text file into <strong>Your
+text</strong>.</li>
+</ul>
+<p><strong>Conversations</strong></p>
+<ul>
+<li><strong>Save conversation</strong> saves the conversation as a
+Markdown file you can read in any text editor.</li>
+<li><strong>Open conversation</strong> loads one back so you can carry
+on where you stopped.</li>
+</ul>
+<p><strong>Memory</strong></p>
+<ul>
+<li>Inside the Memory box, <strong>Save a copy as a file</strong> and
+<strong>Load from a file</strong> do the same for the notes.</li>
+</ul>
+<p>Every saved file records when it was saved, which AI was selected and
+how you were dictating. When you open a file, the app switches back to
+those settings. If that AI is not on the Mac you are using, the app says
+so and keeps the AI you have selected.</p>
+<p>File names include the date and time, for example
+<code>conversation 2026-11-21 1405.md</code>.</p>
+<h2 id="10-compare-ais">10. Compare AIs</h2>
+<p>If you have more than one AI, you can find out which answers your
+kind of question best.</p>
+<p><strong>Ask the same question twice.</strong> After an answer, choose
+a different AI in the menu and press <strong>Ask the selected model the
+same question</strong>. Both answers appear together, and you can rate
+each with stars.</p>
+<p><strong>Compare blind.</strong> Type a question and press
+<strong>Compare blind</strong>. Pick two AIs. Their answers appear as
+Answer A and Answer B with the names hidden, so you judge the answer and
+not the brand. Press <strong>A is better</strong>, <strong>B is
+better</strong> or <strong>About the same</strong>, and the names are
+revealed.</p>
+<p><strong>Ask an AI to judge.</strong> Under a pair of answers, press
+<strong>Have the selected model judge</strong>. It reads the question
+and both answers and says which is better and why.</p>
+<p><strong>Run a question set.</strong> Press <strong>Question
+set</strong>, add the questions you care about, tick the AIs to ask, and
+press <strong>Run</strong>. Every AI answers every question. You can
+hide the names and have an AI judge each one.</p>
+<p><strong>See the results.</strong> <strong>Compare ratings</strong>
+shows, for each AI, how often you preferred it, how often the AI judge
+preferred it, and its average star rating.</p>
+<h2 id="11-privacy-at-a-glance">11. Privacy at a glance</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th>What</th>
+<th>Where it goes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Text you clean up or ask about, with a local AI</td>
+<td>Nowhere. It stays on your Mac.</td>
+</tr>
+<tr>
+<td>Text you send to Claude, and your Memory notes with it</td>
+<td>To Anthropic, under your own API key</td>
+</tr>
+<tr>
+<td>Speech, with Whisper</td>
+<td>Nowhere. Recognised on your Mac.</td>
+</tr>
+<tr>
+<td>Speech, with Apple dictation</td>
+<td>May be sent to Apple</td>
+</tr>
+<tr>
+<td>Drafts, conversations, Memory, ratings</td>
+<td>Stored on your Mac</td>
+</tr>
+<tr>
+<td>Your Claude API key</td>
+<td>Your Mac's Keychain</td>
+</tr>
+<tr>
+<td>Downloading an AI</td>
+<td>A normal download; your text is not sent</td>
+</tr>
+</tbody>
+</table></div>
+<p>The makers of confidant·e receive nothing. The full policy is at <a
+href="https://nader938.github.io/confidant_e_docs/privacy.html">https://nader938.github.io/confidant_e_docs/privacy.html</a>.</p>
+<h2 id="12-problems-and-fixes">12. Problems and fixes</h2>
+<p><strong>No AI is listed, or the menu says "Choose…".</strong> Open
+the menu and pick <strong>Built-in Gemma 3 4B … · download</strong>.</p>
+<p><strong>A red bar says Ollama is not running.</strong> That only
+matters for Ollama models. Start the Ollama app and press the reload
+button, or choose the built-in AI.</p>
+<p><strong>The first answer is slow.</strong> The AI is loading into
+memory. Later runs are faster.</p>
+<p><strong>"That is too much text for the built-in model."</strong> The
+built-in AI reads a few thousand words at a time. Clean up a shorter
+piece, or use a larger Ollama model or Claude.</p>
+<p><strong>Dictation does nothing.</strong> Open System Settings &gt;
+Privacy &amp; Security and allow confidant·e under Microphone and Speech
+Recognition.</p>
+<p><strong>The answer is wrong.</strong> It happens. AIs make mistakes
+and state them confidently. Check anything that matters, and do not
+treat an answer as professional advice.</p>
+<p><strong>Something else.</strong> Write to the address on the support
+page: <a
+href="https://nader938.github.io/confidant_e_docs/">https://nader938.github.io/confidant_e_docs/</a></p>
+
+<footer>confidant·e · Nader Amir</footer>
+</body></html>
