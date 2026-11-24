@@ -3,12 +3,13 @@
     python3 store/site/build.py
 
 Reads docs/user-guide.md and the worked examples in docs/tutorials/, and
-writes guide.html and tutorials.html beside this file. Guide sections listed
-in RECORDINGS get an audio player when their recording is in audio/. Nothing
+writes guide.html, tutorials.html and media.json beside this file. Guide
+sections listed in MEDIA get a player when their file is here. Nothing
 is uploaded: publishing is a separate commit and push of this folder.
 """
 
 import html
+import json
 import re
 import subprocess
 from pathlib import Path
@@ -28,7 +29,7 @@ h2{font-size:1.3rem;margin:2.5rem 0 .5rem}h3{font-size:1.05rem;margin:1.5rem 0 .
 .table{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:.95rem;margin:1rem 0}
 th,td{text-align:left;vertical-align:top;padding:.5rem .75rem;border-bottom:1px solid #c7c5d0}
 pre{background:rgba(120,120,140,.14);padding:.75rem 1rem;border-radius:8px;overflow-x:auto;font-size:.9rem;line-height:1.5;white-space:pre-wrap}blockquote{margin:1rem 0;padding:.1rem 1rem;border-left:3px solid #c7c5d0;color:#5b5d72}.tutorial{border-top:1px solid #c7c5d0;margin-top:2.5rem}.tutorial h2{margin-top:1.75rem}
-audio{width:100%;margin:.5rem 0 0}.note{font-size:.85rem;color:#5b5d72;margin:.25rem 0 1rem}
+audio,video{width:100%;margin:.5rem 0 0}.note{font-size:.85rem;color:#5b5d72;margin:.25rem 0 1rem}
 .tutorial{padding-top:.5rem}
 footer{margin-top:3rem;padding-top:1rem;border-top:1px solid #c7c5d0;font-size:.9rem;color:#5b5d72}
 @media (prefers-color-scheme:dark){body{color:#e4e1e9;background:#131318}.sub,footer{color:#c7c5d0}a{color:#bdc2ff}nav,th,td,footer{border-color:#46464f}}
@@ -61,26 +62,47 @@ def pandoc(markdown: str) -> str:
     )
 
 
-# Guide sections that open with a recording of the author talking about them.
-RECORDINGS = {
-    "1-why-use-it": ("00-intro", "An introduction"),
-    "3-getting-started": ("02-getting-started", "Getting started"),
-    "10-compare-ais": ("09-comparing-ais", "Comparing AIs"),
-}
+# Recordings and videos that go with sections of the guide. Each entry is
+# (section number, anchor on the web page, title, kind, file under this
+# folder). The website shows them in the guide, and the app reads the same
+# list from media.json and plays them from here, so adding one needs no new
+# version of the app. kind is "audio" or "video".
+MEDIA = [
+    ("1", "1-why-use-it", "An introduction", "audio", "audio/00-intro.m4a"),
+    ("3", "3-getting-started", "Getting started", "audio", "audio/02-getting-started.m4a"),
+    ("10", "10-compare-ais", "Comparing AIs", "audio", "audio/09-comparing-ais.m4a"),
+]
+
+
+def media() -> str:
+    """The list the app fetches: only files that are really here."""
+    return json.dumps(
+        {
+            "version": 1,
+            "guide": [
+                {"section": section, "title": title, "kind": kind, "file": file}
+                for section, _, title, kind, file in MEDIA
+                if (SITE / file).exists()
+            ],
+        },
+        indent=2,
+    )
 
 
 def guide() -> str:
     text = (DOCS / "user-guide.md").read_text()
     text = text.replace("](videos/README.md)", "](tutorials.html)")
     body = pandoc(text)
-    for section, (name, title) in RECORDINGS.items():
-        if not (SITE / "audio" / f"{name}.m4a").exists():
+    for _, anchor, title, kind, file in MEDIA:
+        if not (SITE / file).exists():
             continue
-        heading = re.search(rf'<h2 id="{section}">.*?</h2>', body, flags=re.S)
+        heading = re.search(rf'<h2 id="{anchor}">.*?</h2>', body, flags=re.S)
         if heading:
+            tag = "video" if kind == "video" else "audio"
+            verb = "Watch" if kind == "video" else "Listen"
             player = (
-                f'\n<audio controls preload="none" src="audio/{name}.m4a">'
-                f'</audio>\n<p class="note">Listen: {html.escape(title)}, '
+                f'\n<{tag} controls preload="none" src="{file}"></{tag}>'
+                f'\n<p class="note">{verb}: {html.escape(title)}, '
                 "recorded by Nader Amir.</p>"
             )
             body = body[: heading.end()] + player + body[heading.end() :]
@@ -113,4 +135,5 @@ def tutorials() -> str:
 if __name__ == "__main__":
     (SITE / "guide.html").write_text(guide())
     (SITE / "tutorials.html").write_text(tutorials())
-    print("wrote guide.html and tutorials.html (not uploaded)")
+    (SITE / "media.json").write_text(media() + "\n")
+    print("wrote guide.html, tutorials.html and media.json (not uploaded)")

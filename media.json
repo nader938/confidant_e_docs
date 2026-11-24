@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "guide": [
+    {
+      "section": "1",
+      "title": "An introduction",
+      "kind": "audio",
+      "file": "audio/00-intro.m4a"
+    },
+    {
+      "section": "3",
+      "title": "Getting started",
+      "kind": "audio",
+      "file": "audio/02-getting-started.m4a"
+    },
+    {
+      "section": "10",
+      "title": "Comparing AIs",
+      "kind": "audio",
+      "file": "audio/09-comparing-ais.m4a"
+    }
+  ]
+}
