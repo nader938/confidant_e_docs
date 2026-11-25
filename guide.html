@@ -88,8 +88,9 @@ Anthropic bills for what you send</td>
 <audio controls preload="none" src="audio/02-getting-started.m4a"></audio>
 <p class="note">Listen: Getting started, recorded by Nader Amir.</p>
 <ol type="1">
-<li>Open confidant·e. The first thing you see is the welcome page. Read
-it, then press <strong>Get started</strong>.</li>
+<li>Open confidant·e. An opening screen with the app's name shows for a
+moment, then the welcome page. Read it, then press <strong>Get
+started</strong>.</li>
 <li>If no AI is ready on your Mac, the app offers to download the
 built-in one. Press <strong>Download</strong>. It is about 2.5 GB and
 only happens once.</li>
@@ -103,7 +104,7 @@ download</strong>.</p>
 right of the window and choose <strong>Welcome page</strong>. The same
 menu has this guide, the tutorials and support. Untick <strong>Show this
 when the app opens</strong> on that page if you do not want it at every
-launch.</p>
+launch. The opening screen has the same tick box.</p>
 <h2 id="4-clean-up-your-writing">4. Clean up your writing</h2>
 <p>The app opens in <strong>Clean up</strong> mode, with two boxes side
 by side.</p>
@@ -120,6 +121,10 @@ sentences. It keeps your meaning, your tone and your paragraphs.</p>
 happening. The first run after opening the app is slower because the AI
 has to load into memory. When it finishes, the line shows how long it
 took.</p>
+<p>After a clean-up, the words the AI changed or added are shaded in the
+right-hand box, and a label above it counts them, such as "12 changes".
+Click the label to hide or show the shading. Words that were only
+removed leave no mark.</p>
 <p>What you can do with the result:</p>
 <ul>
 <li><strong>Copy</strong> puts it on the clipboard.</li>
@@ -172,7 +177,9 @@ Apple.</td>
 the question box.</p>
 <h2 id="6-ask-a-question">6. Ask a question</h2>
 <ol type="1">
-<li>Press <strong>Ask</strong> at the top left.</li>
+<li>Choose <strong>Ask</strong> in the sidebar on the left. In a narrow
+window there is no sidebar; use the Clean up / Ask switch at the
+top.</li>
 <li>Type a question in the box at the bottom and press
 <strong>Ask</strong> (or Return).</li>
 <li>The answer appears above. Ask a follow-up and the AI remembers the
@@ -186,9 +193,13 @@ conversation so far.</li>
 </ul>
 <p>The conversation is kept automatically. Close the app, open it again,
 and it is still there.</p>
-<p><strong>New conversation</strong> clears the screen for a fresh
-topic. Before it does, it offers to add the conversation to Memory (see
-<a href="#8-memory">section 8</a>).</p>
+<p><strong>New conversation</strong>, in the sidebar, clears the screen
+for a fresh topic. Before it does, it offers to add the conversation to
+Memory (see <a href="#8-memory">section 8</a>).</p>
+<p>The conversation you leave is not lost. It is listed in the sidebar
+under <strong>Conversations</strong>, by its first question. Click it to
+bring it back and carry on; the small × removes it from the list. The
+app keeps the last twelve.</p>
 <h2 id="7-choose-your-ai">7. Choose your AI</h2>
 <p>The menu at the top, labelled <strong>Clean up with</strong> or
 <strong>Answer with</strong>, lists every AI you can use. Change it
@@ -218,6 +229,27 @@ usage.</li>
 right and paste the key. It is stored in your Mac's Keychain.</li>
 <li>Choose <strong>Claude Opus 5.5 (cloud)</strong> in the menu.</li>
 </ol>
+<h3 id="the-privacy-bar-and-offline-mode">The privacy bar and Offline
+mode</h3>
+<p>The coloured bar across the top always says where your words are
+going:</p>
+<ul>
+<li><strong>Green, "Private":</strong> the selected AI runs on this
+Mac.</li>
+<li><strong>Amber, "Online":</strong> the selected AI is Claude, and
+what you write is sent to Anthropic.</li>
+</ul>
+<p>At the right of the bar is the <strong>Offline mode</strong> switch.
+While it is on, the app makes no internet connections at all:</p>
+<ul>
+<li>Claude cannot be selected or used.</li>
+<li>Nothing can be downloaded.</li>
+<li>Apple dictation, which may send speech to Apple, is not started.
+Whisper still works if its model is already downloaded.</li>
+<li>Help does not fetch its recordings.</li>
+</ul>
+<p>The AIs on your Mac carry on working. Use Offline mode when you want
+to be certain, or to show someone that nothing leaves the computer.</p>
 <p>The app never picks Claude for you. A simple rule: use a local AI for
 anything private, and Claude when the text is not sensitive and you want
 the best result.</p>
@@ -227,7 +259,7 @@ the best result.</p>
 already knows what matters when you start again.</p>
 <p>To add a conversation to Memory:</p>
 <ol type="1">
-<li>In Ask mode, press <strong>Memory</strong>.</li>
+<li>Press <strong>Memory</strong> in the sidebar.</li>
 <li>Press <strong>Add this conversation, using …</strong>. The selected
 AI rewrites the notes to include what was said.</li>
 <li>Read the notes. Edit anything that is wrong or that you do not want
@@ -294,12 +326,12 @@ revealed.</p>
 <strong>Have the selected model judge</strong>. It reads the question
 and both answers and says which is better and why.</p>
 <p><strong>Run a question set.</strong> Press <strong>Question
-set</strong>, add the questions you care about, tick the AIs to ask, and
-press <strong>Run</strong>. Every AI answers every question. You can
-hide the names and have an AI judge each one.</p>
-<p><strong>See the results.</strong> <strong>Compare ratings</strong>
-shows, for each AI, how often you preferred it, how often the AI judge
-preferred it, and its average star rating.</p>
+set</strong> in the sidebar, add the questions you care about, tick the
+AIs to ask, and press <strong>Run</strong>. Every AI answers every
+question. You can hide the names and have an AI judge each one.</p>
+<p><strong>See the results.</strong> <strong>Compare ratings</strong>,
+in the sidebar, shows, for each AI, how often you preferred it, how
+often the AI judge preferred it, and its average star rating.</p>
 <h2 id="11-privacy-at-a-glance">11. Privacy at a glance</h2>
 <div class="table"><table>
 <thead>
@@ -342,6 +374,9 @@ preferred it, and its average star rating.</p>
 <p>The makers of confidant·e receive nothing. The full policy is at <a
 href="https://nader938.github.io/confidant_e_docs/privacy.html">https://nader938.github.io/confidant_e_docs/privacy.html</a>.</p>
 <h2 id="12-problems-and-fixes">12. Problems and fixes</h2>
+<p><strong>"Offline mode is on, so…"</strong> You tried something that
+needs the internet. Turn off the Offline mode switch in the bar at the
+top, or carry on with an AI on your Mac.</p>
 <p><strong>No AI is listed, or the menu says "Choose…".</strong> Open
 the menu and pick <strong>Built-in Gemma 3 4B … · download</strong>.</p>
 <p><strong>A red bar says Ollama is not running.</strong> That only
